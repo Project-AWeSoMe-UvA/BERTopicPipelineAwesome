@@ -37,6 +37,7 @@ conda activate tiktok_gpu
 .
 ├── README.md
 ├── tiktok_gpu.yml                               # Conda environment for Script 1-5
+├── fuzzy_environment.yml                        # Conda environment for Script 0
 ├── config.py                                    # Configuration file
 ├── 0_fuzzy_matching.ipnyb
 ├── 1_data_preparation.ipynb
@@ -73,7 +74,7 @@ conda activate tiktok_gpu
 
 ## Workflow
 
-0. **Fuzzy Matching** - 
+0. **Fuzzy Matching** - Extracting hashtags & assigning hashtag primary forms 
 1. **Data Preparation** - Final TikTok hashtag data preparation (removing FYP tags)
 2. **Topic Modelling** - Train BERTopic on 50k sample, apply to full dataset
 3. **Topic Merging** - Merge main and outlier model topics and create counts and apply manually created topic labels
@@ -87,7 +88,7 @@ Edit `config.py` to customize:
 ## Results
 
 This pipeline produces:
-- Fuzzy-matched hashtag variants
+- Fuzzy-matched hashtags
 - Trained BERTopic models
 - Topic assignments for all documents
 - Readable excel sheets about topics and their document counts
