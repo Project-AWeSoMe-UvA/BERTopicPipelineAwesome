@@ -33,18 +33,18 @@ conda activate tiktok_gpu
 ```
 
 ## Project Structure
-```
+
 .
 ├── README.md
 ├── tiktok_gpu.yml                               # Conda environment for Script 1-5
 ├── fuzzy_environment.yml                        # Conda environment for Script 0
 ├── config.py                                    # Configuration file
-├── 0_fuzzy_matching.ipnyb
+├── 0_fuzzy_matching.ipynb
 ├── 1_data_preparation.ipynb
 ├── 2_topic_modelling.ipynb
 ├── 3_topic_merging.ipynb
 ├── 4_topic_coherence.ipynb
-│── 5_output_exploration.ipynb
+├── 5_output_exploration.ipynb
 ├── data preparation files/
 │   ├── FYP_tags.txt                             # Excluded tags
 │   ├── hashtag_df_no_FYP.pkl                    # Preprocessed DataFrame
@@ -54,23 +54,23 @@ conda activate tiktok_gpu
 │   └── outlier_docs_bert_final.pkl              # Outlier documents from initial BERT run
 ├── manual coding/
 │   ├── Final topics IDs.xlsx                    # Full manual coding sheet for categories & topics with IDs and top hashtags
-|   └── Incoherent topics IDs.xlsx               # List of topic IDs that were manually coded as "incoherent"
+│   └── Incoherent topics IDs.xlsx               # List of topic IDs that were manually coded as "incoherent"
 ├── topic info/
 │   ├── category_counts.xlsx                     # Document counts for each category
 │   ├── corrected_topic_info.xlsx                # Corrected topic info for main model
-│   ├── corrected_topic_info_coutliers.xlsx      # Corrected topic info for outlier model
+│   ├── corrected_topic_info_outliers.xlsx       # Corrected topic info for outlier model
 │   ├── merged_topic_info_with_categories.xlsx   # Final topic info table with merged topics, document counts & manual labels
-|   └── topic_coherence_df.xlsx                  # All manually created topics including their coherence score and topic IDs
+│   └── topic_coherence_df.xlsx                  # All manually created topics including their coherence score and topic IDs
 ├── topic modelling files/
 │   ├── bertopic_gridsearch_results.csv          # Hyperparameter gridsearch results
-|   └── embedtest_results_df.pkl                 # Embedding model comparison test results 
+│   └── embedtest_results_df.pkl                 # Embedding model comparison test results 
 └── topic models/                         
     ├── bertopic_model_final                     # BERTopic model file (initial run)
     ├── bertopic_model_outliers                  # BERTopic model file (outlier run)   
     ├── merged_topics.npy                        # Merged topics numpy array
     ├── outlier_topics.npy                       # Outlier topics numpy array
     └── topics.npy                               # Main model topics numpy array
-```
+
 
 ## Workflow
 
@@ -112,10 +112,10 @@ If you use this code in your research, please cite:
 
 ## Acknowledgments
 
-- BERTopic library by Maarten Grootendorst
-- Sentence Transformers
+- [BERTopic library](https://maartengr.github.io/BERTopic/index.html) by Maarten Grootendorst
+- [Sentence Transformers](https://huggingface.co/sentence-transformers)
 
 ## Contact
 
 - Inga Vondenhof - i.k.vondenhof@uva.nl
-- Project Link: https://github.com/yourusername/bertopic-tiktok
+- Konrad Mikalauskas - k.mikalauskas@uva.nl
