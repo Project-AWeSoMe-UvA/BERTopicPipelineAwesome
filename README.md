@@ -33,7 +33,7 @@ conda activate tiktok_gpu
 ```
 
 ## Project Structure
-
+```
 .
 ├── README.md
 ├── tiktok_gpu.yml                               # Conda environment for Script 1-5
@@ -70,7 +70,7 @@ conda activate tiktok_gpu
     ├── merged_topics.npy                        # Merged topics numpy array
     ├── outlier_topics.npy                       # Outlier topics numpy array
     └── topics.npy                               # Main model topics numpy array
-
+```
 
 ## Workflow
 
