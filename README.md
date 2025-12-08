@@ -117,5 +117,5 @@ If you use this code in your research, please cite:
 
 ## Contact
 
-- Inga Vondenhof - i.k.vondenhof@uva.nl
-- Konrad Mikalauskas - k.mikalauskas@uva.nl
+- XXXXX - 1
+- XXXXX - 2
