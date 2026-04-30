@@ -48,14 +48,13 @@ conda activate tiktok_gpu
 ```
 .
 ├── README.md
-├── tiktok_gpu.yml                               # Conda environment for Script 1-5
+├── tiktok_gpu.yml                               # Conda environment for Script 1-4
 ├── config.py                                    # Configuration file
 ├── 0_fuzzy_matching.ipnyb
 ├── 1_data_preparation.ipynb
 ├── 2_topic_modelling.ipynb
-├── 3_topic_merging.ipynb
-├── 4_topic_coherence.ipynb
-│── 5_output_exploration.ipynb
+├── 3_topic_merging_and_counts.ipynb
+│── 4_output_exploration.ipynb
 ├── data preparation files/
 │   ├── FYP_tags.txt                             # Excluded meta-referencing tags
 │   ├── hashtag_df_no_FYP.pkl                    # Preprocessed DataFrame
@@ -69,7 +68,7 @@ conda activate tiktok_gpu
 ├── topic info/
 │   ├── category_counts.xlsx                     # Document counts for each category
 │   ├── corrected_topic_info.xlsx                # Corrected topic info for main model
-│   ├── corrected_topic_info_outliers.xlsx      # Corrected topic info for outlier model
+│   ├── corrected_topic_info_outliers.xlsx       # Corrected topic info for outlier model
 │   ├── merged_topic_info_with_categories.xlsx   # Final topic info table with merged topics, document counts & manual labels
 |   └── topic_coherence_df.xlsx                  # All manually labelled topics including their coherence score and topic IDs
 ├── topic modelling files/
