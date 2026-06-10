@@ -2,30 +2,34 @@
 
 ## Overview
 
-This repository contains a complete pipeline for topic modeling of TikTok hashtag data using BERTopic. The project processes ~5.3 million TikTok videos, extracts topics from hashtag patterns, and provides tools for topic validation and analysis.
+This repository contains an overview of the complete pipeline for topic modeling of TikTok hashtag data using BERTopic in What’s on Their For You Page? A Large-Scale Computational Approach to Analyzing Adolescents’ TikTok Archives Through Hashtag Topic Modeling.
 
 ## Features
 
-- Preprocessing pipeline for TikTok hashtag data
-- Two-stage BERTopic modeling (main + outlier processing)
-- Topic merging and hierarchical categorization
-- Quantitative evaluation (coherence, diversity metrics)
-- Qualitative evaluation
+- Preprocessing TikTok hashtags for topic modeling
+- Two-stage BERTopic modeling for topic discovery
+- Topic merging and hierarchical categorization based on human labels
+- Quantitative & qualitative evaluation (coherence, diversity metrics)
 - Manual coding sheets
 
-## Anonymization note
+## Note on sensitive data
 
-Please note that the notebooks below will only reproduce some outputs if certain, sensitive files are saved in the directory, and those files are missing because sensitive data files cannot be shared publicly.
-Within the notebooks, original output that contains sensitive data was erased, and some outputs are retained only for inspections, and can only be reproduced by researchers who hold the sensitive data files or are reproduced with your own data.
+This repository only functions as a resource to review outputs and scripts that were run to produce results of What’s on Their For You Page?.
 
-## Installation
+Output and files that contained sensitive data were erased/removed. Notebooks are retained for inspection, and can only be reproduced by researchers who hold the sensitive data files or are reproduced with your own data.
+
+## Want to model your own data?
+
+Please refer to our [repository for a reusable pipeline](https://github.com/Project-AWeSoMe-UvA/BERTopicReusablePipelineAwesome), where you can supply and easily model your own data!
+
+## Installation of this project
 
 ### Prerequisites Fuzzy Matching (Script 0)
 
-- An SQLite `tiktok_database.db` file
+- An SQLite tiktok_database.db file
 - Python 3.11, PyArrow downgraded to v20.0
 
-### Prerequisites BERTopic (Script 1-5)
+### Prerequisites BERTopic (Script 1-4)
 
 - Python 3.10.18
 - CUDA-capable GPU (recommended: NVIDIA GeForce RTX 3070 Ti)
@@ -38,7 +42,7 @@ Within the notebooks, original output that contains sensitive data was erased, a
 conda env create -f fuzzy_environment.yml
 conda activate fuzzy_environment
 
-# Create conda environment for BERTopic (Script 1-5)
+# Create conda environment for BERTopic (Script 1-4)
 conda env create -f tiktok_gpu.yml
 conda activate tiktok_gpu
 ```
@@ -48,17 +52,17 @@ conda activate tiktok_gpu
 ```
 .
 ├── README.md
+├── fuzzy_environment.yml                        # Conda environment for Script 0
 ├── tiktok_gpu.yml                               # Conda environment for Script 1-4
 ├── config.py                                    # Configuration file
 ├── 0_fuzzy_matching.ipnyb
 ├── 1_data_preparation.ipynb
 ├── 2_topic_modelling.ipynb
-├── 3_topic_merging_and_counts.ipynb
-│── 4_output_exploration.ipynb
+├── 3_topic_merging.ipynb
+├── 4_output_exploration.ipynb
 ├── data preparation files/
-│   ├── FYP_tags.txt                             # Excluded meta-referencing tags
-│   ├── hashtag_df_no_FYP.pkl                    # Preprocessed DataFrame
-│   └── extracted_hashtags_anonymized.pkl        # Input data
+│   ├── FYP_tags.txt                             # Hashtags that were removed from modeling
+│   └── extracted_hashtags_anonymized.pkl        # Anonymized input data
 ├── documents/
 │   ├── docs_bert_final.pkl                      # Input documents
 │   └── outlier_docs_bert_final.pkl              # Outlier documents
@@ -84,21 +88,15 @@ conda activate tiktok_gpu
 
 ## Workflow
 
-1. **Fuzzy Matching** - Reduce hashtag noise via fuzzy matching
-2. **Data Preparation** - Final TikTok hashtag data preparation (normalization & removing FYP tags)
-3. **Topic Modelling** - Train BERTopic on sample, apply to full dataset
-4. **Topic Merging** - Merge main and outlier model topics,recalculate counts and apply manually created topic labels
-5. **Output Exploration** - Quantitatively & qualitatively explore output
-
-## Configuration
-
-Edit `config.py` to customize:
-
-- Input/output paths
+0. Fuzzy Matching - Reduce hashtag noise via fuzzy matching
+1. Data Preparation - TikTok hashtag data preparatio
+2. Topic Modelling - BERTopic modeling
+3. Topic Merging - Merge main and outlier model topics, recalculate counts and apply manually created topic labels
+4. Output Exploration - Quantitatively & qualitatively explore output
 
 ## Results
 
-This pipeline produces:
+This pipeline produced:
 
 - Fuzzy-matched hashtag variants
 - Trained BERTopic models
@@ -108,17 +106,17 @@ This pipeline produces:
 
 ## License
 
-[Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+Apache 2.0
 
 ## Citation
 
 If you use this code in your research, please cite:
 
 ```bibtex
-@article{XXX,
-  title={XXX},
-  author={XXX},
-  journal={XXX},
+@article{
+  title={What’s on Their For You Page? A Large-Scale Computational Approach to Analyzing Adolescents’ TikTok Archives Through Hashtag Topic Modeling},
+  author={van der Wal, Amber and Vondenhof, Inga and Mikalauskas, Konrad, and Godard, Rebecca and Zioni, Kfir and Loecherbach, Felicia and Beyens, Ine},
+  journal={Computational Communication Research},
   year={2026}
 }
 ```
@@ -130,5 +128,5 @@ If you use this code in your research, please cite:
 
 ## Contact
 
-- XXX
-- Project Link: XXXX\
+- project-awesome-bb@uva.nl
+- Project Link: https://project-awesome.nl/
